@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -13,7 +12,7 @@ func binaryToDecimal(bin []int) int {
 	num := 0
 
 	for i, _ := range bin {
-		num += int(math.Pow(2, float64(i))) * bin[len(bin)-1-i]
+		num += bin[i] << (len(bin) - 1 - i)
 	}
 
 	return num
